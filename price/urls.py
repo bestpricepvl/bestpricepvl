@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
 #from django.conf.urls import url
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext_lazy as _
+
 from django.conf.urls import include
 
 from django.conf import settings # new
