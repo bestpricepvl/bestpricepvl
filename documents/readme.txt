@@ -11,7 +11,7 @@ best.price.pvl@mail.ru
 BbPp1508@+-
 
 База данных
-postgres://kbglnwigdcjary:bf5c0938feb2d949cfaa8bc0a9861af70395a56c2535c236c5d53284715f3f4c@ec2-35-153-114-74.compute-1.amazonaws.com:5432/d99o4vl068mjvp
+postgres://lxqccqhukfjsxo:d3b8e7b1bcdd3b7c0f3d3400201ae891376fd33d49af055b1b2a99ea2b37ab8b@ec2-34-231-63-30.compute-1.amazonaws.com:5432/d15efqchci0eq0
 
 **********
 Миграция
