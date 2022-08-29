@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
-from django.conf.urls import url
+#from django.conf.urls import url
 from django.utils.translation import ugettext as _
 from django.conf.urls import include
 
@@ -54,9 +54,9 @@ urlpatterns = [
 
     path('json/<action>/', views.json),
     path('admin/', admin.site.urls),
-    url(r'^export/csv/$', views.export_prices_csv, name='export_prices_csv'),
-    url(r'^export/excel/$', views.export_prices_excel, name='export_prices_excel'),
-
+    path('export/excel/', views.export_prices_excel, name='export_prices_excel'),     
+    path('export/csv/', views.export_prices_csv, name='export_prices_csv'),
+    
     path('api/drf-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),     #http://127.0.0.1:8000/api/prices/
 
