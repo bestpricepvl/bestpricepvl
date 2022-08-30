@@ -45,7 +45,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('admin/', admin.site.urls),
     #path('signup/$', views.signup, name='signup'),
-    path('register/$', views.register, name='register'),
+    path('register/', views.register, name='register'),
     path('i18n/', include('django.conf.urls.i18n')),
 
     path('create/', views.create, name='create'),
@@ -54,7 +54,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
 
     path('json/<action>/', views.json),
-    path('admin/', admin.site.urls),
     path('export/excel/', views.export_prices_excel, name='export_prices_excel'),     
     path('export/csv/', views.export_prices_csv, name='export_prices_csv'),
     
