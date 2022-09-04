@@ -48,7 +48,7 @@ class PricesViewSet(viewsets.ModelViewSet):
     serializer_class = PricesSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
-    #permission_classes = [IsAuthenticated]    
+    permission_classes = [IsAuthenticated]    
 
 
 """ Фукнция обработки запроса""" 
