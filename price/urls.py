@@ -58,7 +58,7 @@ urlpatterns = [
     path('export/csv/', views.export_prices_csv, name='export_prices_csv'),
     
     path('api/drf-auth/', include('rest_framework.urls')),
-    path('api/', include(router.urls)),     #http://127.0.0.1:8000/api/prices/
+    path('api/', include(router.urls)),     #http://127.0.0.1:8000/api/prices/, https://bestpricepvl.herokuapp.com/api/prices/
 
     path('api/auth/', include('djoser.urls')),          
     re_path(r'^auth/', include('djoser.urls.authtoken')),  

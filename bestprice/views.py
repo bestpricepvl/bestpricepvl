@@ -44,7 +44,7 @@ def group_required(*group_names):
 
 
 class PricesViewSet(viewsets.ModelViewSet):
-    queryset = Prices.objects.all()
+    queryset = Prices.objects.all().order_by('-datep')
     serializer_class = PricesSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
