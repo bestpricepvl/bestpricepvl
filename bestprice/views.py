@@ -66,14 +66,14 @@ class PricesViewSet(viewsets.ModelViewSet):
     pagination_class = StandardResultsSetPagination
 
 class StoresViewSet(viewsets.ModelViewSet):
-    queryset = Prices.objects.values('store').distinct()
+    queryset = Prices.objects.values('store').distinct().order_by('store')
     serializer_class = StoresSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
 class ProductsViewSet(viewsets.ModelViewSet):
-    queryset = Prices.objects.values('product').distinct()
+    queryset = Prices.objects.values('product').distinct().order_by('product')
     serializer_class = ProductsSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
