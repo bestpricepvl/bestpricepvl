@@ -6,3 +6,13 @@ class PricesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prices
         fields = ("id", "datep", "store", "product", "cost", "details")
+
+class StoresSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Prices
+        fields = ("store",)
+
+class ProductsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Prices
+        fields = ("product",)

@@ -32,6 +32,10 @@ from rest_framework import routers
 
 router = routers.SimpleRouter()
 router.register(r'prices', views.PricesViewSet)
+router2 = routers.SimpleRouter()
+router2.register(r'stores', views.StoresViewSet)
+router3 = routers.SimpleRouter()
+router3.register(r'products', views.ProductsViewSet)
 
 """ Определение маршрутов """
 """ Переменная urlpatterns определяет набор сопоставлений функций обработки с определенными строками запроса.
@@ -59,6 +63,8 @@ urlpatterns = [
     
     path('api/drf-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),     #http://127.0.0.1:8000/api/prices/, https://bestpricepvl.herokuapp.com/api/prices/
+    path('api/', include(router2.urls)),     #http://127.0.0.1:8000/api/stores/, https://bestpricepvl.herokuapp.com/api/stores/
+    path('api/', include(router3.urls)),     #http://127.0.0.1:8000/api/products/, https://bestpricepvl.herokuapp.com/api/products/
 
     path('api/auth/', include('djoser.urls')),          
     re_path(r'^auth/', include('djoser.urls.authtoken')),  

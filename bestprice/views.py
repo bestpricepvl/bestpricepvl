@@ -26,7 +26,7 @@ import csv
 import xlwt
 from io import BytesIO
 
-from .serializers import PricesSerializer
+from .serializers import PricesSerializer, StoresSerializer, ProductsSerializer
 from rest_framework import viewsets
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -42,15 +42,43 @@ def group_required(*group_names):
         return False
     return user_passes_test(in_groups, login_url='403')
 
+""" Rest API """
+from rest_framework.pagination import PageNumberPagination
 
+class LargeResultsSetPagination(PageNumberPagination):
+    # Настройка пагинации
+    page_size = 1000
+    page_size_query_param = 'page_size'
+    max_page_size = 10000
+
+class StandardResultsSetPagination(PageNumberPagination):
+    # Настройка пагинации
+    page_size = 20
+    page_size_query_param = 'page_size'
+    max_page_size = 1000
+    
 class PricesViewSet(viewsets.ModelViewSet):
     queryset = Prices.objects.all().order_by('-datep')
     serializer_class = PricesSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]    
+    permission_classes = [IsAuthenticated]
+    pagination_class = StandardResultsSetPagination
 
+class StoresViewSet(viewsets.ModelViewSet):
+    queryset = Prices.objects.values('store').distinct()
+    serializer_class = StoresSerializer
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    #authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
+class ProductsViewSet(viewsets.ModelViewSet):
+    queryset = Prices.objects.values('product').distinct()
+    serializer_class = ProductsSerializer
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    #authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
 """ Фукнция обработки запроса""" 
 # В функции index() получаем все данные с помощью метода Prices.objects.all() и передаем их в шаблон index.html.
 def index(request):
