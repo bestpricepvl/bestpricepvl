@@ -4,6 +4,24 @@ BbPp1508@+-
 Пароль для внешних приложений
 qMdQwDR08b0MS4XnAqFt
 
+
+*********************
+* Публикация Render *
+*********************
+GitHub https://github.com/
+bestpricepvl
+best.price.pvl@mail.ru
+BbPp1508@+-
+Repository name - bestpricepvl
+
+https://dashboard.render.com/register?next=/
+best.price.pvl@mail.ru
+BbPp1508@+-
+
+Сайт 
+https://nikah-knf6.onrender.com/
+
+
 Хостинг
 https://www.heroku.com/
 Почтовый ящик

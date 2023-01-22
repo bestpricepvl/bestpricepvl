@@ -60,24 +60,24 @@ class StandardResultsSetPagination(PageNumberPagination):
 class PricesViewSet(viewsets.ModelViewSet):
     queryset = Prices.objects.all().order_by('-datep')
     serializer_class = PricesSerializer
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    #authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
-    pagination_class = StandardResultsSetPagination
+    #permission_classes = [IsAuthenticated]
+    #pagination_class = StandardResultsSetPagination
 
 class StoresViewSet(viewsets.ModelViewSet):
     queryset = Prices.objects.values('store').distinct().order_by('store')
     serializer_class = StoresSerializer
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    #authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
 
 class ProductsViewSet(viewsets.ModelViewSet):
     queryset = Prices.objects.values('product').distinct().order_by('product')
     serializer_class = ProductsSerializer
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    #authentication_classes = [SessionAuthentication, BasicAuthentication]
     #authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     
 """ Фукнция обработки запроса""" 
 # В функции index() получаем все данные с помощью метода Prices.objects.all() и передаем их в шаблон index.html.

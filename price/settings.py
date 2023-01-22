@@ -88,19 +88,19 @@ WSGI_APPLICATION = 'price.wsgi.application'
 
 DATABASES = {
 
-    #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd15efqchci0eq0',
-        'USER' : 'lxqccqhukfjsxo',
-        'PASSWORD' : 'd3b8e7b1bcdd3b7c0f3d3400201ae891376fd33d49af055b1b2a99ea2b37ab8b',
-        'HOST' : 'ec2-34-231-63-30.compute-1.amazonaws.com',
-        'PORT' : '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+
+    #'default': {
+    #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #    'NAME': 'd15efqchci0eq0',
+    #    'USER' : 'lxqccqhukfjsxo',
+    #    'PASSWORD' : 'd3b8e7b1bcdd3b7c0f3d3400201ae891376fd33d49af055b1b2a99ea2b37ab8b',
+    #    'HOST' : 'ec2-34-231-63-30.compute-1.amazonaws.com',
+    #    'PORT' : '5432',
+    #}
 
     #'default': {
     #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
